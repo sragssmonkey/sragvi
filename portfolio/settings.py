@@ -107,3 +107,12 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+ALLOWED_HOSTS = [
+    'sragvi.onrender.com',
+    'www.sragvi.onrender.com',  # optional, if you ever use www
+    '127.0.0.1',                # for local testing
+    'localhost'                 # for local testing
+]
+
+# If using HTTPS on Render
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
