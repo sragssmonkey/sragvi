@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # -------------------- BASIC SETTINGS --------------------
 SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key')
 DEBUG = False
-ALLOWED_HOSTS = ['sragvi-portfolio.onrender.com', 'localhost', '127.0.0.1']
+
 
 # -------------------- INSTALLED APPS --------------------
 INSTALLED_APPS = [
@@ -86,6 +86,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
