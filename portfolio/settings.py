@@ -9,6 +9,9 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
+from dotenv import load_dotenv
+load_dotenv()
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # -------------------- BASIC SETTINGS --------------------
@@ -87,9 +90,9 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
+MEDIA_URL = '/media/'  # you can keep this
+MEDIA_ROOT = None  # prevent local conflict
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
 
 # -------------------- CLOUDINARY CONFIG --------------------
 cloudinary.config(
@@ -117,3 +120,6 @@ ALLOWED_HOSTS = [
 
 # If using HTTPS on Render
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+CLOUDINARY_URL = f"cloudinary://{os.environ.get('CLOUDINARY_API_KEY')}:{os.environ.get('CLOUDINARY_API_SECRET')}@{os.environ.get('CLOUDINARY_CLOUD_NAME')}?secure=true"
+
+
